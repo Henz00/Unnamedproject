@@ -22,19 +22,12 @@ public class PlayerController2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit2D rh = Physics2D.Linecast(transform.position, groundCheck.position, mask);
-        if (rh.collider != null)
+        if (jump)
         {
-            grounded = true;
-        }
-        else
-        {
-            grounded = false;
-        }
-
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            jump = true;
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                jumping();
+            }
         }
     }
     private void FixedUpdate()
@@ -47,12 +40,14 @@ public class PlayerController2 : MonoBehaviour
             float sign = Mathf.Sign(rb.velocity.x);
             rb.velocity = new Vector2(sign, rb.velocity.y);
         }
-
-        if (jump && grounded)
-        {
-
-            rb.AddForce(Vector2.up * jumpspeed, ForceMode2D.Impulse);
-            jump = false;
-        }
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        jump = true;
+    }
+    void jumping()
+    {
+        rb.AddForce(Vector2.up * jumpspeed, ForceMode2D.Impulse);
+        jump = false;
     }
 }

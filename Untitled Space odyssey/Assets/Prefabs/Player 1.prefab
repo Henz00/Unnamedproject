@@ -127,11 +127,11 @@ MonoBehaviour:
   jump: 0
   grounded: 1
   maxspeed: 10
-  jumpspeed: 10
+  jumpspeed: 7
   groundCheck: {fileID: 4576436355386291443}
   mask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
 --- !u!50 &4576436356253342848
 Rigidbody2D:
   serializedVersion: 4
