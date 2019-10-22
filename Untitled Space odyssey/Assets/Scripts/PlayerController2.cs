@@ -12,10 +12,14 @@ public class PlayerController2 : MonoBehaviour
     public float jumpspeed = 10;
     public Transform groundCheck;
     public LayerMask mask;
+    public int data;
+
+    AudioSource pickup;
 
     // Start is called before the first frame update
     void Start()
     {
+        pickup = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -49,5 +53,14 @@ public class PlayerController2 : MonoBehaviour
     {
         rb.AddForce(Vector2.up * jumpspeed, ForceMode2D.Impulse);
         jump = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("dingding");
+        other.gameObject.SetActive(false);
+        data++;
+        pickup.Play(0);
+
     }
 }
