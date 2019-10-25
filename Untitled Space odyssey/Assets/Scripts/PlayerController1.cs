@@ -10,12 +10,9 @@ public class PlayerController1 : MonoBehaviour
     public bool jump = true;
     public float maxspeed = 10;
     public float jumpspeed = 10;
-    public Transform groundCheck;
-    public LayerMask mask;
-    public int data = 0;
+    public LayerMask layerMask;
 
     AudioSource pickup;
-
 
     // Start is called before the first frame update
     void Start()
@@ -27,13 +24,14 @@ public class PlayerController1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (jump)
+        if (boxCheck())
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 jumping();
             }
         }
+
     }
 
     private void FixedUpdate()
@@ -48,23 +46,25 @@ public class PlayerController1 : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    /*void OnCollisionEnter2D(Collision2D collision)
     {
         jump = true;
-    }
+    }*/
 
     void jumping()
     {
         rb.AddForce(Vector2.up * jumpspeed, ForceMode2D.Impulse);
-        jump = false;
     }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("dingding");
+        pickup.Play();
         other.gameObject.SetActive(false);
-        data++;
-        pickup.Play(0);
-    
     }
+    private bool boxCheck()
+    {
+        RaycastHit2D raycastHit2D = Physics2D.BoxCast(transform.position, new Vector2(.9f, .7f), 0f, new Vector2(0, -1), distance: .7f, layerMask);
+        //Debug.Log(raycastHit2D.collider);
+        return raycastHit2D.collider != null;
     }
+}
+   
