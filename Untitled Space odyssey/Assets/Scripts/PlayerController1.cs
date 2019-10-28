@@ -7,10 +7,10 @@ public class PlayerController1 : MonoBehaviour
 
     Rigidbody2D rb;
     public float speed = 30;
-    public bool jump = true;
     public float maxspeed = 10;
     public float jumpspeed = 10;
     public LayerMask layerMask;
+    private PickupHUD datacounter;
 
     AudioSource pickup;
 
@@ -19,6 +19,7 @@ public class PlayerController1 : MonoBehaviour
     {
         pickup = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
+        datacounter = GetComponentInParent<PickupHUD>();
     }
 
     // Update is called once per frame
@@ -31,7 +32,6 @@ public class PlayerController1 : MonoBehaviour
                 jumping();
             }
         }
-
     }
 
     private void FixedUpdate()
@@ -55,11 +55,14 @@ public class PlayerController1 : MonoBehaviour
     {
         rb.AddForce(Vector2.up * jumpspeed, ForceMode2D.Impulse);
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         pickup.Play();
         other.gameObject.SetActive(false);
+        datacounter.datascore++;
     }
+
     private bool boxCheck()
     {
         RaycastHit2D raycastHit2D = Physics2D.BoxCast(transform.position, new Vector2(1.9f, 1.3f), 0f, new Vector2(0, -1), distance: 1.3f, layerMask);

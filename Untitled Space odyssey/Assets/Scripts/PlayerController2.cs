@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class PlayerController2 : MonoBehaviour
 {
+
     Rigidbody2D rb;
     public float speed = 30;
-    public bool jump = false;
-    public bool grounded = true;
     public float maxspeed = 10;
     public float jumpspeed = 10;
     public LayerMask layerMask;
-
+    private PickupHUD datacounter;
 
     AudioSource pickup;
 
@@ -20,6 +19,7 @@ public class PlayerController2 : MonoBehaviour
     {
         pickup = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
+        datacounter = GetComponentInParent<PickupHUD>();
     }
 
     // Update is called once per frame
@@ -33,6 +33,7 @@ public class PlayerController2 : MonoBehaviour
             }
         }
     }
+
     private void FixedUpdate()
     {
         float h = Input.GetAxis("Horizontal 2");
@@ -43,12 +44,13 @@ public class PlayerController2 : MonoBehaviour
             float sign = Mathf.Sign(rb.velocity.x);
             rb.velocity = new Vector2(sign, rb.velocity.y);
         }
-       
     }
+
     /*void OnCollisionEnter2D(Collision2D collision)
     {
         jump = true;
     }*/
+
     void jumping()
     {
         rb.AddForce(Vector2.up * jumpspeed, ForceMode2D.Impulse);
@@ -58,6 +60,7 @@ public class PlayerController2 : MonoBehaviour
     {
         pickup.Play();
         other.gameObject.SetActive(false);
+        datacounter.datascore++;
     }
 
     private bool boxCheck()
