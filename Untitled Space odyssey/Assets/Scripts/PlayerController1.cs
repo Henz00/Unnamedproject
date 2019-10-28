@@ -62,7 +62,7 @@ public class PlayerController1 : MonoBehaviour
     }
     private bool boxCheck()
     {
-        RaycastHit2D raycastHit2D = Physics2D.BoxCast(transform.position, new Vector2(.9f, .7f), 0f, new Vector2(0, -1), distance: .7f, layerMask);
+        RaycastHit2D raycastHit2D = Physics2D.BoxCast(transform.position, new Vector2(1.9f, 1.3f), 0f, new Vector2(0, -1), distance: 1.3f, layerMask);
         //Debug.Log(raycastHit2D.collider);
         return raycastHit2D.collider != null;
     }
