@@ -10,16 +10,22 @@ public class PlayerController2 : MonoBehaviour
     public float maxspeed = 10;
     public float jumpspeed = 10;
     public LayerMask layerMask;
-    private PickupHUD datacounter;
+    public float pitchRange = 0.2f;
 
-    AudioSource pickup;
+    private PickupHUD datacounter;
+    private float originalPitch;
+
+    public AudioSource pickup;
+    public AudioSource jumpSound;
 
     // Start is called before the first frame update
     void Start()
     {
-        pickup = GetComponent<AudioSource>();
+        
         rb = GetComponent<Rigidbody2D>();
         datacounter = GetComponentInParent<PickupHUD>();
+
+        originalPitch = jumpSound.pitch;
     }
 
     // Update is called once per frame
@@ -54,6 +60,9 @@ public class PlayerController2 : MonoBehaviour
     void jumping()
     {
         rb.AddForce(Vector2.up * jumpspeed, ForceMode2D.Impulse);
+
+        jumpSound.pitch = Random.Range(originalPitch - pitchRange, originalPitch + pitchRange);
+        jumpSound.Play();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
