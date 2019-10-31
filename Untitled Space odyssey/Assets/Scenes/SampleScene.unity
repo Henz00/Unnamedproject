@@ -784,6 +784,7 @@ GameObject:
   - component: {fileID: 708731617}
   - component: {fileID: 708731619}
   - component: {fileID: 708731618}
+  - component: {fileID: 708731620}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -1938,6 +1939,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &708731620
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708731616}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &766333665 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3564851995184556120, guid: 79e9e46560cc3774eb683aed72bc21cd,
@@ -4144,7 +4161,7 @@ PrefabInstance:
     - target: {fileID: 4576436356253342855, guid: 93b54b52c94d9104eba868b5276cac61,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.02
+      value: 1.57
       objectReference: {fileID: 0}
     - target: {fileID: 4576436356253342855, guid: 93b54b52c94d9104eba868b5276cac61,
         type: 3}
