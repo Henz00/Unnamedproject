@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\cameraControls.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\OutOfBounds.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\PickupHUD.cs" />
     <Compile Include="Assets\Scripts\PlayerController1.cs" />
