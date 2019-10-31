@@ -4161,7 +4161,7 @@ PrefabInstance:
     - target: {fileID: 4576436356253342855, guid: 93b54b52c94d9104eba868b5276cac61,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.57
+      value: 1.87
       objectReference: {fileID: 0}
     - target: {fileID: 4576436356253342855, guid: 93b54b52c94d9104eba868b5276cac61,
         type: 3}
@@ -4230,7 +4230,7 @@ PrefabInstance:
     - target: {fileID: 5914487211043994102, guid: 05b34cc42a83ea8448b4ae7a05c795b4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.65
       objectReference: {fileID: 0}
     - target: {fileID: 5914487211043994102, guid: 05b34cc42a83ea8448b4ae7a05c795b4,
         type: 3}
@@ -4277,6 +4277,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5914487211043994100, guid: 05b34cc42a83ea8448b4ae7a05c795b4,
+        type: 3}
+      propertyPath: pitchRange
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498761155, guid: 05b34cc42a83ea8448b4ae7a05c795b4, type: 3}
+      propertyPath: m_Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498761155, guid: 05b34cc42a83ea8448b4ae7a05c795b4, type: 3}
+      propertyPath: BypassListenerEffects
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498761155, guid: 05b34cc42a83ea8448b4ae7a05c795b4, type: 3}
+      propertyPath: BypassReverbZones
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498761155, guid: 05b34cc42a83ea8448b4ae7a05c795b4, type: 3}
+      propertyPath: BypassEffects
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498761155, guid: 05b34cc42a83ea8448b4ae7a05c795b4, type: 3}
+      propertyPath: Mute
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498761155, guid: 05b34cc42a83ea8448b4ae7a05c795b4, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a3c33e5b81d17444bc3d4b5ed13b06e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05b34cc42a83ea8448b4ae7a05c795b4, type: 3}
 --- !u!1001 &6578175135342614552
