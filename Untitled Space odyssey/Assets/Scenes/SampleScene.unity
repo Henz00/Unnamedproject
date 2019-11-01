@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.56949115, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -548,7 +548,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5006,8 +5006,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DampTime: 0.2
-  m_ScreenEdgeBuffer: 4
-  m_MinSize: 6.5
+  m_ScreenEdgeBuffer: 6
+  m_MinSize: 8
   m_Targets:
   - {fileID: 1333448980}
   - {fileID: 638385455}
@@ -5703,12 +5703,12 @@ PrefabInstance:
     - target: {fileID: 4576436356253342855, guid: 93b54b52c94d9104eba868b5276cac61,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 104.91
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 4576436356253342855, guid: 93b54b52c94d9104eba868b5276cac61,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.83
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 4576436356253342855, guid: 93b54b52c94d9104eba868b5276cac61,
         type: 3}
@@ -5772,12 +5772,12 @@ PrefabInstance:
     - target: {fileID: 5914487211043994102, guid: 05b34cc42a83ea8448b4ae7a05c795b4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 101.12
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5914487211043994102, guid: 05b34cc42a83ea8448b4ae7a05c795b4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.14
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5914487211043994102, guid: 05b34cc42a83ea8448b4ae7a05c795b4,
         type: 3}
@@ -5824,6 +5824,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1498761155, guid: 05b34cc42a83ea8448b4ae7a05c795b4, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2dd3c384a261d1744a88877be802bb51, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05b34cc42a83ea8448b4ae7a05c795b4, type: 3}
 --- !u!1001 &6578175135342614552
