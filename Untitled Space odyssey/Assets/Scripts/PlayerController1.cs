@@ -12,10 +12,10 @@ public class PlayerController1 : MonoBehaviour
     public LayerMask layerMask;
     public float pitchRange = 0.2f;
 
-    private PickupHUD datacounter;
+    
     private float originalPitch;
 
-    public AudioSource pickup;
+   
     public AudioSource jumpSound;
 
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class PlayerController1 : MonoBehaviour
     {
         
         rb = GetComponent<Rigidbody2D>();
-        datacounter = GetComponentInParent<PickupHUD>();
+       
 
         originalPitch = jumpSound.pitch;
     }
@@ -65,12 +65,6 @@ public class PlayerController1 : MonoBehaviour
         jumpSound.Play();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        pickup.Play();
-        other.gameObject.SetActive(false);
-        datacounter.datascore++;
-    }
 
     private bool boxCheck()
     {

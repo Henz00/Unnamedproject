@@ -927,6 +927,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 606499226}
+  - component: {fileID: 606499227}
   m_Layer: 0
   m_Name: LevelData
   m_TagString: Untagged
@@ -952,6 +953,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &606499227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606499225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4191416f09e0b4295da71f652ce064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PickUpSlider: {fileID: 1168080673}
+  datascore: 0
 --- !u!4 &638385455 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5914487211043994102, guid: 05b34cc42a83ea8448b4ae7a05c795b4,
@@ -3806,7 +3821,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1419315046}
-  - component: {fileID: 1419315047}
   m_Layer: 0
   m_Name: Players
   m_TagString: Untagged
@@ -3830,20 +3844,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1419315047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1419315045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc4191416f09e0b4295da71f652ce064, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PickUpSlider: {fileID: 1168080673}
-  datascore: 0
 --- !u!1 &1466817330
 GameObject:
   m_ObjectHideFlags: 0
@@ -5755,11 +5755,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4576436356253342850, guid: 93b54b52c94d9104eba868b5276cac61,
-        type: 3}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93b54b52c94d9104eba868b5276cac61, type: 3}
 --- !u!1001 &5914487211745102271
@@ -5772,6 +5767,11 @@ PrefabInstance:
     - target: {fileID: 5914487211043994106, guid: 05b34cc42a83ea8448b4ae7a05c795b4,
         type: 3}
       propertyPath: m_Name
+      value: Player 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914487211043994106, guid: 05b34cc42a83ea8448b4ae7a05c795b4,
+        type: 3}
+      propertyPath: m_TagString
       value: Player 2
       objectReference: {fileID: 0}
     - target: {fileID: 5914487211043994102, guid: 05b34cc42a83ea8448b4ae7a05c795b4,
@@ -5828,15 +5828,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1498761155, guid: 05b34cc42a83ea8448b4ae7a05c795b4, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 2dd3c384a261d1744a88877be802bb51, type: 3}
-    - target: {fileID: 5914487211043994100, guid: 05b34cc42a83ea8448b4ae7a05c795b4,
-        type: 3}
-      propertyPath: speed
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05b34cc42a83ea8448b4ae7a05c795b4, type: 3}
