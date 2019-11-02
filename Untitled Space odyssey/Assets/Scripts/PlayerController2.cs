@@ -43,13 +43,14 @@ public class PlayerController2 : MonoBehaviour
     private void FixedUpdate()
     {
         float h = Input.GetAxis("Horizontal 2");
-        rb.AddForce(h * Vector2.right * speed);
+        rb.velocity = new Vector2(h * speed, rb.velocity.y);
+        /*rb.AddForce(h * Vector2.right * speed);
 
         if (Mathf.Abs(rb.velocity.x) > maxspeed)
         {
             float sign = Mathf.Sign(rb.velocity.x);
             rb.velocity = new Vector2(sign, rb.velocity.y);
-        }
+        }*/
     }
 
     /*void OnCollisionEnter2D(Collision2D collision)
@@ -75,7 +76,7 @@ public class PlayerController2 : MonoBehaviour
     private bool boxCheck()
     {
         RaycastHit2D raycastHit2D = Physics2D.BoxCast(transform.position, new Vector2(3.7f,1f), 0f, new Vector2(0, -1),distance: 1f, layerMask);
-        Debug.Log(raycastHit2D.collider);
+        //Debug.Log(raycastHit2D.collider);
         return raycastHit2D.collider != null;
     }
 }
