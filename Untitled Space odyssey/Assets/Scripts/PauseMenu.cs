@@ -43,6 +43,8 @@ public class PauseMenu : MonoBehaviour
         //SceneManager.LoadScene(scene.name);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
+        
+        
     }
 
     public void MainMenu()
