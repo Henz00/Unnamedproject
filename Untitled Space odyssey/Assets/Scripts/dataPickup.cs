@@ -5,6 +5,8 @@ using UnityEngine;
 public class dataPickup : MonoBehaviour
 {
     AudioSource pickup;
+    public ParticleSystem burst;
+    public ParticleSystem sparks;
 
     private PickupHUD datacounter;
     // Start is called before the first frame update
@@ -23,7 +25,8 @@ public class dataPickup : MonoBehaviour
             datacounter.datascore++;
             gameObject.GetComponent<Collider2D>().enabled = false;
             gameObject.GetComponent<MeshRenderer>().enabled = false;
-            GetComponentInChildren<ParticleSystem>().Play();
+            sparks.Stop();
+            burst.Play();
             //gameObject.SetActive(false);
             
         }
