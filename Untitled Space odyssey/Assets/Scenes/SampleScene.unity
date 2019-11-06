@@ -893,6 +893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PickUpSlider: {fileID: 1168080673}
   datascore: 0
+  dataAmount: 0
 --- !u!1 &621326388
 GameObject:
   m_ObjectHideFlags: 0
@@ -31425,9 +31426,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 6
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 2
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
