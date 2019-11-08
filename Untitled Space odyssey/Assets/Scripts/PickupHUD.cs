@@ -8,9 +8,15 @@ public class PickupHUD : MonoBehaviour
     public Slider m_PickUpSlider;
     public float datascore = 0;
 
+    private GameObject[] dataObjects;
+
     void Start()
     {
         m_PickUpSlider.value= 0F;
+
+        dataObjects = GameObject.FindGameObjectsWithTag("data");
+        m_PickUpSlider.maxValue = dataObjects.Length;
+      
     }
 
 

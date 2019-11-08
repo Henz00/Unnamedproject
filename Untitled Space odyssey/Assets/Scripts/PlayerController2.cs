@@ -12,6 +12,7 @@ public class PlayerController2 : MonoBehaviour
     public LayerMask playerMask;
     public LayerMask dustMask;
     public float pitchRange = 0.2f;
+    public Animator animator;
 
 
     private float originalPitch;
@@ -40,6 +41,12 @@ public class PlayerController2 : MonoBehaviour
                 jumping();
             }
         }
+        if (boxCheck(playerMask))
+        {
+            animator.SetBool("jumpcheck2", false);
+        }
+        else
+            animator.SetBool("jumpcheck2", true);
     }
 
     private void FixedUpdate()
