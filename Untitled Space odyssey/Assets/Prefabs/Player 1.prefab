@@ -58,6 +58,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   pitchRange: 0.2
+  animator: {fileID: 0}
   jumpSound: {fileID: 2135298523}
   dust: {fileID: 4576436354781456932}
 --- !u!50 &4576436356253342848

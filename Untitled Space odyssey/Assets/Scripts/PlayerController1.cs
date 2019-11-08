@@ -17,6 +17,7 @@ public class PlayerController1 : MonoBehaviour
     
     private float originalPitch;
     private bool facingRight;
+    private float movement;
    
     public AudioSource jumpSound;
     public ParticleSystem dust;
@@ -52,8 +53,9 @@ public class PlayerController1 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float h = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(h * speed, rb.velocity.y);
+        movement = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(movement * speed, rb.velocity.y);
+        animator.SetFloat("Speed", Mathf.Abs(movement));
         /*rb.AddForce(h * Vector2.right * speed);
 
         if (Mathf.Abs(rb.velocity.x) > maxspeed)
@@ -61,7 +63,7 @@ public class PlayerController1 : MonoBehaviour
             float sign = Mathf.Sign(rb.velocity.x);
             rb.velocity = new Vector2(sign, rb.velocity.y);
         }*/
-        changeDirection(h);
+        changeDirection(movement);
     }
 
     /*void OnCollisionEnter2D(Collision2D collision)
@@ -74,6 +76,7 @@ public class PlayerController1 : MonoBehaviour
         rb.AddForce(Vector2.up * jumpspeed, ForceMode2D.Impulse);
         jumpSound.pitch = Random.Range(originalPitch - pitchRange, originalPitch + pitchRange);
         jumpSound.Play();
+
 
         if (boxCheck(dustMask))
         {
