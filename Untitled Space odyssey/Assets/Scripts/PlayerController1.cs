@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController1 : MonoBehaviour
 {
@@ -9,29 +11,36 @@ public class PlayerController1 : MonoBehaviour
     public float speed = 30;
     public float maxspeed = 10;
     public float jumpspeed = 10;
+    public float speedDivider = 2f;
+    public float damagejumpforce = 10;
+    public float pitchRange = 0.2f;
+    public float slowmo = 0.8f;
+    public float restarttime = 1f;
+    public int Health = 3;
     public LayerMask playerMask;
     public LayerMask dustMask;
-    public float pitchRange = 0.2f;
-    public Animator animator;
-    public float speedDivider = 2f;
+    public Text Gameover;
 
-    
-    private float originalPitch;
-    private bool facingRight;
+    private AudioSource AS;
+    public AudioClip Jumpsound;
+    public AudioClip Damagetakensound;
+
+    public Animator animator;
+    public ParticleSystem dust;
+
+    private float originalPitch;    
     private float movement;
     private float movementSpeed;
-   
-    public AudioSource jumpSound;
-    public ParticleSystem dust;
+    private bool facingRight;    
 
     // Start is called before the first frame update
     void Start()
-    {
-        
+    {                
         rb = GetComponent<Rigidbody2D>();
+        AS = GetComponent<AudioSource>();
 
         facingRight = true;
-        originalPitch = jumpSound.pitch;
+        //originalPitch = jumpSound.pitch;
     }
 
     // Update is called once per frame
@@ -58,6 +67,11 @@ public class PlayerController1 : MonoBehaviour
         }
         else
             animator.SetBool("jumpcheck", true);*/
+
+        if(Health <= 0)
+        {        
+            StartCoroutine("Death");
+        }
     }
 
     private void FixedUpdate()
@@ -69,16 +83,32 @@ public class PlayerController1 : MonoBehaviour
         changeDirection(movement);
     }
 
-    /*void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        jump = true;
-    }*/
+        if (collision.gameObject.CompareTag("Damage1"))
+        {
+            Health = Health - 1;
+            AS.PlayOneShot(Damagetakensound, pitchRange);
+            rb.AddForce(Vector2.up * damagejumpforce, ForceMode2D.Impulse);
+            Debug.Log("touchinghurts");
+        }
+
+        if (collision.gameObject.CompareTag("Damage2"))
+        {
+            Health = Health - 2;
+        }
+
+        if (collision.gameObject.CompareTag("Damage3"))
+        {
+            Health = Health - 2;
+        }
+    }
 
     void jumping()
     {
         rb.AddForce(Vector2.up * jumpspeed, ForceMode2D.Impulse);
-        jumpSound.pitch = Random.Range(originalPitch - pitchRange, originalPitch + pitchRange);
-        jumpSound.Play();
+        //AS.pitch = Random.Range(originalPitch - pitchRange, originalPitch + pitchRange);
+        AS.PlayOneShot(Jumpsound, pitchRange);
 
 
         if (boxCheck(dustMask))
@@ -86,7 +116,6 @@ public class PlayerController1 : MonoBehaviour
             dust.Play();
         }
     }
-
 
     private bool boxCheck(LayerMask layerMask)
     {
@@ -109,6 +138,14 @@ public class PlayerController1 : MonoBehaviour
             }
             
         }
+    }
+
+    public IEnumerator Death()
+    {
+        Time.timeScale = slowmo;
+        Gameover.text = "YOU DIED!";
+        yield return new WaitForSeconds(restarttime);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
    

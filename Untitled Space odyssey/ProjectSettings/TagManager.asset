@@ -7,6 +7,10 @@ TagManager:
   - Player 1
   - Player 2
   - data
+  - Damage1
+  - Damage2
+  - Damage3
+  - Ground
   layers:
   - Default
   - TransparentFX
