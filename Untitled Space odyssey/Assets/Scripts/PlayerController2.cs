@@ -13,11 +13,13 @@ public class PlayerController2 : MonoBehaviour
     public LayerMask dustMask;
     public float pitchRange = 0.2f;
     public Animator animator;
+    public float speedDivider = 2f;
 
 
     private float originalPitch;
     private bool facingRight;
     private float movement;
+    private float movementSpeed;
 
     public AudioSource jumpSound;
     public ParticleSystem dust;
@@ -41,28 +43,29 @@ public class PlayerController2 : MonoBehaviour
             {
                 jumping();
             }
+            animator.SetBool("jumpcheck2", false);
+            movementSpeed = speed;
         }
-        if (boxCheck(playerMask))
+        else
+        {
+            animator.SetBool("jumpcheck2", true);
+            movementSpeed = speed / speedDivider;
+        }
+
+        /*if (boxCheck(playerMaskanimator.SetBool("jumpcheck2", true)))
         {
             animator.SetBool("jumpcheck2", false);
         }
         else
-            animator.SetBool("jumpcheck2", true);
+            animator.SetBool("jumpcheck2", true);*/
     }
 
     private void FixedUpdate()
     {
         movement = Input.GetAxis("Horizontal 2");
-        rb.velocity = new Vector2(movement * speed, rb.velocity.y);
+        rb.velocity = new Vector2(movement * movementSpeed, rb.velocity.y);
         animator.SetFloat("Speed2", Mathf.Abs(movement));
 
-        /*rb.AddForce(h * Vector2.right * speed);
-
-        if (Mathf.Abs(rb.velocity.x) > maxspeed)
-        {
-            float sign = Mathf.Sign(rb.velocity.x);
-            rb.velocity = new Vector2(sign, rb.velocity.y);
-        }*/
         changeDirection(movement);
     }
 
