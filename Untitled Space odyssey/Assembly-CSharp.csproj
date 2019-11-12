@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\background.cs" />
+    <Compile Include="Assets\Scripts\backgroundMainMenu.cs" />
     <Compile Include="Assets\Scripts\cameraControls.cs" />
     <Compile Include="Assets\Scripts\dataPickup.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
