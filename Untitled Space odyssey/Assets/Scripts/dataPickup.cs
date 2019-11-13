@@ -7,13 +7,15 @@ public class dataPickup : MonoBehaviour
     AudioSource pickup;
     public ParticleSystem burst;
     public ParticleSystem sparks;
-
+   
+    private float SleepTime;
     private PickupHUD datacounter;
     // Start is called before the first frame update
     void Start()
     {
         datacounter = GetComponentInParent<PickupHUD>();
         pickup = GetComponent<AudioSource>();
+        SleepTime = 1f;
     }
 
   
@@ -27,8 +29,18 @@ public class dataPickup : MonoBehaviour
             gameObject.GetComponent<MeshRenderer>().enabled = false;
             sparks.Stop();
             burst.Play();
+            StartCoroutine(TimeSleep());
             //gameObject.SetActive(false);
-            
+
         }
+    }
+
+    IEnumerator TimeSleep()
+    {
+        if (Time.timeScale == 1.0f)
+            Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(SleepTime);
+        if (Time.timeScale == 0f)
+            Time.timeScale = 1f;
     }
 }

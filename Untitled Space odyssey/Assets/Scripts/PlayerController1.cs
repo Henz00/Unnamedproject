@@ -111,15 +111,5 @@ public class PlayerController1 : MonoBehaviour
         }
     }
 
-    void OnCollissionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("jumppad"))
-        {
-            Debug.Log("Boost!");
-        }
-
-
-
-    }
 }
    
