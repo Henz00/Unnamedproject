@@ -15,19 +15,19 @@ public class PlayerController1 : MonoBehaviour
     public Animator animator;
     public float speedDivider = 2f;
 
-    
+
     private float originalPitch;
     private bool facingRight;
     private float movement;
     private float movementSpeed;
-   
+
     public AudioSource jumpSound;
     public ParticleSystem dust;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
         rb = GetComponent<Rigidbody2D>();
 
         facingRight = true;
@@ -41,7 +41,7 @@ public class PlayerController1 : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                jumping();                
+                jumping();
             }
             animator.SetBool("jumpcheck", false);
             movementSpeed = speed;
@@ -107,11 +107,19 @@ public class PlayerController1 : MonoBehaviour
             {
                 dust.Play();
             }
-            
+
         }
     }
 
-   
+    void OnCollissionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("jumppad"))
+        {
+            Debug.Log("Boost!");
+        }
 
+
+
+    }
 }
    
