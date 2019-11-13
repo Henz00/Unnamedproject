@@ -23,5 +23,6 @@ public class PickupHUD : MonoBehaviour
     void Update()
     {
         m_PickUpSlider.value = datascore;
+        
     }
 }

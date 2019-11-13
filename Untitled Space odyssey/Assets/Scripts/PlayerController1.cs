@@ -28,6 +28,7 @@ public class PlayerController1 : MonoBehaviour
     public Animator animator;
     public ParticleSystem dust;
 
+<<<<<<< HEAD
     private float originalPitch;    
     private float movement;
     private float movementSpeed;
@@ -36,6 +37,21 @@ public class PlayerController1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {                
+=======
+
+    private float originalPitch;
+    private bool facingRight;
+    private float movement;
+    private float movementSpeed;
+
+    public AudioSource jumpSound;
+    public ParticleSystem dust;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+>>>>>>> master
         rb = GetComponent<Rigidbody2D>();
         AS = GetComponent<AudioSource>();
 
@@ -50,7 +66,7 @@ public class PlayerController1 : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                jumping();                
+                jumping();
             }
             animator.SetBool("jumpcheck", false);
             movementSpeed = speed;
@@ -136,10 +152,11 @@ public class PlayerController1 : MonoBehaviour
             {
                 dust.Play();
             }
-            
+
         }
     }
 
+<<<<<<< HEAD
     public IEnumerator Death()
     {
         Time.timeScale = slowmo;
@@ -150,5 +167,7 @@ public class PlayerController1 : MonoBehaviour
 
    
 
+=======
+>>>>>>> master
 }
    
