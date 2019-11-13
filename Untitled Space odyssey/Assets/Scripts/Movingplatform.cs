@@ -50,7 +50,7 @@ public class Movingplatform : MonoBehaviour
 
         if (collision.gameObject == Player2)
         {
-            Player1.transform.parent = transform;
+            Player2.transform.parent = transform;
         }
     }
 
@@ -63,7 +63,7 @@ public class Movingplatform : MonoBehaviour
 
         if (collision.gameObject == Player2)
         {
-            Player1.transform.parent = null;
+            Player2.transform.parent = null;
         }
     }
 }

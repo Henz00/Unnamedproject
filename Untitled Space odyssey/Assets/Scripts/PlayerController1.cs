@@ -28,30 +28,14 @@ public class PlayerController1 : MonoBehaviour
     public Animator animator;
     public ParticleSystem dust;
 
-<<<<<<< HEAD
-    private float originalPitch;    
-    private float movement;
-    private float movementSpeed;
-    private bool facingRight;    
-
-    // Start is called before the first frame update
-    void Start()
-    {                
-=======
-
     private float originalPitch;
-    private bool facingRight;
     private float movement;
     private float movementSpeed;
-
-    public AudioSource jumpSound;
-    public ParticleSystem dust;
+    private bool facingRight;
 
     // Start is called before the first frame update
     void Start()
     {
-
->>>>>>> master
         rb = GetComponent<Rigidbody2D>();
         AS = GetComponent<AudioSource>();
 
@@ -84,7 +68,7 @@ public class PlayerController1 : MonoBehaviour
         else
             animator.SetBool("jumpcheck", true);*/
 
-        if(Health <= 0)
+        if (Health <= 0)
         {        
             StartCoroutine("Death");
         }
@@ -123,9 +107,7 @@ public class PlayerController1 : MonoBehaviour
     void jumping()
     {
         rb.AddForce(Vector2.up * jumpspeed, ForceMode2D.Impulse);
-        //AS.pitch = Random.Range(originalPitch - pitchRange, originalPitch + pitchRange);
         AS.PlayOneShot(Jumpsound, pitchRange);
-
 
         if (boxCheck(dustMask))
         {
@@ -148,15 +130,14 @@ public class PlayerController1 : MonoBehaviour
             Vector3 scale = transform.localScale;
             scale.x *= -1;
             transform.localScale = scale;
+
             if (boxCheck(dustMask))
             {
                 dust.Play();
             }
-
         }
     }
 
-<<<<<<< HEAD
     public IEnumerator Death()
     {
         Time.timeScale = slowmo;
@@ -164,10 +145,5 @@ public class PlayerController1 : MonoBehaviour
         yield return new WaitForSeconds(restarttime);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
-   
-
-=======
->>>>>>> master
 }
    

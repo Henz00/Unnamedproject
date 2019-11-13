@@ -38,9 +38,9 @@ public class PlayerController2 : MonoBehaviour
     {        
         rb = GetComponent<Rigidbody2D>();
         AS = GetComponent<AudioSource>();
-
-        //originalPitch = jumpSound.pitch;
+        
         facingRight = true;
+        //originalPitch = jumpSound.pitch;
     }
 
     // Update is called once per frame
@@ -74,6 +74,15 @@ public class PlayerController2 : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        movement = Input.GetAxis("Horizontal 2");
+        rb.velocity = new Vector2(movement * movementSpeed, rb.velocity.y);
+
+        animator.SetFloat("Speed2", Mathf.Abs(movement));
+        changeDirection(movement);
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Damage1"))
@@ -93,26 +102,11 @@ public class PlayerController2 : MonoBehaviour
         {
             Health = Health - 2;
         }
-    }
-
-    private void FixedUpdate()
-    {
-        movement = Input.GetAxis("Horizontal 2");
-        rb.velocity = new Vector2(movement * movementSpeed, rb.velocity.y);
-        animator.SetFloat("Speed2", Mathf.Abs(movement));
-
-        changeDirection(movement);
-    }
-
-    /*void OnCollisionEnter2D(Collision2D collision)
-    {
-        jump = true;
-    }*/
+    }   
 
     void jumping()
     {
         rb.AddForce(Vector2.up * jumpspeed, ForceMode2D.Impulse);
-
         AS.PlayOneShot(Jumpsound, pitchRange);
 
         if (boxCheck(dustMask))
@@ -141,7 +135,6 @@ public class PlayerController2 : MonoBehaviour
             {
                 dust.Play();
             }
-
         }
     }
 
