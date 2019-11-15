@@ -4972,6 +4972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burst: {fileID: 3929600319236332792}
   sparks: {fileID: 1935759394}
+  SleepTime: 1
 --- !u!1001 &6578175134322411474
 PrefabInstance:
   m_ObjectHideFlags: 0

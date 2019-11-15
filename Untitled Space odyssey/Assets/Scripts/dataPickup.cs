@@ -7,15 +7,14 @@ public class dataPickup : MonoBehaviour
     AudioSource pickup;
     public ParticleSystem burst;
     public ParticleSystem sparks;
-   
-    private float SleepTime;
+    public float SleepTime;
+
     private PickupHUD datacounter;
     // Start is called before the first frame update
     void Start()
     {
         datacounter = GetComponentInParent<PickupHUD>();
         pickup = GetComponent<AudioSource>();
-        SleepTime = 1f;
     }
 
   
