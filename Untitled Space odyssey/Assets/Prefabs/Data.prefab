@@ -4972,7 +4972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burst: {fileID: 3929600319236332792}
   sparks: {fileID: 1935759394}
-  SleepTime: 1
+  SleepTime: 0.02
 --- !u!1001 &6578175134322411474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4980,10 +4980,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6578175135579163964}
     m_Modifications:
-    - target: {fileID: 7909132132760394538, guid: 49ffbbc4670b9194faa5f14af2bcee48,
+    - target: {fileID: 5453729359529083366, guid: 49ffbbc4670b9194faa5f14af2bcee48,
         type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.2
+      propertyPath: m_Name
+      value: dataPickupParticle
       objectReference: {fileID: 0}
     - target: {fileID: 683821112862522195, guid: 49ffbbc4670b9194faa5f14af2bcee48,
         type: 3}
@@ -5040,16 +5040,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5453729359529083366, guid: 49ffbbc4670b9194faa5f14af2bcee48,
-        type: 3}
-      propertyPath: m_Name
-      value: dataPickupParticle
-      objectReference: {fileID: 0}
     - target: {fileID: 6092735178200963132, guid: 49ffbbc4670b9194faa5f14af2bcee48,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5e58b46c624b37c41a53dd5f1cf8b33d, type: 2}
+    - target: {fileID: 7909132132760394538, guid: 49ffbbc4670b9194faa5f14af2bcee48,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49ffbbc4670b9194faa5f14af2bcee48, type: 3}
 --- !u!4 &5924261848253561985 stripped
