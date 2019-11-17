@@ -27,6 +27,8 @@ public class PlayerController1 : MonoBehaviour
 
     public Animator animator;
     public ParticleSystem dust;
+    public ParticleSystem water;
+
 
     private float originalPitch;
     private float movement;
@@ -144,6 +146,14 @@ public class PlayerController1 : MonoBehaviour
         Gameover.text = "YOU DIED!";
         yield return new WaitForSeconds(restarttime);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void OnCollisionEnter2D(Collision other)
+    {
+        if (other.gameObject.layer == 4)
+        {
+            water.Play();
+        }
     }
 }
    

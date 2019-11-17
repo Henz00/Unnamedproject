@@ -1518,7 +1518,7 @@ GameObject:
   - component: {fileID: 708731620}
   m_Layer: 0
   m_Name: Level ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33977,7 +33977,7 @@ Tilemap:
   - first: {x: 167, y: -5, z: 0}
     second:
       m_TileIndex: 4
-      m_TileSpriteIndex: 24
+      m_TileSpriteIndex: 28
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -58853,7 +58853,7 @@ Tilemap:
   - first: {x: 204, y: 14, z: 0}
     second:
       m_TileIndex: 22
-      m_TileSpriteIndex: 8
+      m_TileSpriteIndex: 27
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -59062,8 +59062,8 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 0f54a30e01189e84988afd31f046d7ea, type: 3}
   - m_RefCount: 8
     m_Data: {fileID: 21300000, guid: 7839e5e2dccc48c409fb22e8faaa516c, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: 2a9732b48551e5b4f93ca8f1530afcd1, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 17
     m_Data: {fileID: 21300000, guid: 19684d665b153d44a9cad8e0ebc72c40, type: 3}
   - m_RefCount: 4
@@ -59094,16 +59094,16 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: df838ae0e7f88174d8e425236c159aa7, type: 3}
   - m_RefCount: 95
     m_Data: {fileID: 21300000, guid: e76451711d8f99543ab26d6f240c37a9, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 2a9732b48551e5b4f93ca8f1530afcd1, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: ce61adf63d09d3b46a037d2c4a1b12d7, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 6377
     m_Data:
