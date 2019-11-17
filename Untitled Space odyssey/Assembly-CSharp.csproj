@@ -70,7 +70,9 @@
     <Compile Include="Assets\Scripts\dialogueManager.cs" />
     <Compile Include="Assets\Scripts\DialogueTrigger.cs" />
     <Compile Include="Assets\Scripts\Interactable.cs" />
+    <Compile Include="Assets\Scripts\InterButton.cs" />
     <Compile Include="Assets\Scripts\JumpPad.cs" />
+    <Compile Include="Assets\Scripts\landing.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Movingplatform.cs" />
     <Compile Include="Assets\Scripts\OutOfBounds.cs" />
