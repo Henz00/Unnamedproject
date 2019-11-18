@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/thornsTest.unity
+- path: Assets/Scenes/puzzleTest.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

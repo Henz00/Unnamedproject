@@ -73,6 +73,7 @@
      <Compile Include="Assets\Scripts\PickupHUD.cs" />
      <Compile Include="Assets\Scripts\PlayerController1.cs" />
      <Compile Include="Assets\Scripts\PlayerController2.cs" />
+     <Compile Include="Assets\Scripts\puzzleDoor.cs" />
      <Compile Include="Assets\Scripts\Sleep.cs" />
      <Compile Include="Assets\Scripts\SlowMotion.cs" />
      <Compile Include="Assets\Scripts\textTrigger.cs" />

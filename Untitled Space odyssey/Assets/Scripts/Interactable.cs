@@ -7,7 +7,7 @@ public class Interactable : MonoBehaviour
     
     
     private static bool interactable = false;
-    private bool activate = false;
+    public bool activate = false;
  
 
     void Update()
