@@ -681,7 +681,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 20
     mosaicPosition: {x: 0, y: 0}
   - name: eye
@@ -744,7 +744,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 32
     mosaicPosition: {x: 0, y: 0}
   - name: bandage
@@ -814,7 +814,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 43
     mosaicPosition: {x: 0, y: 0}
   - name: bandage

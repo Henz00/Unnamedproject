@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 802734452697779488}
   - component: {fileID: 6734232931499057300}
   - component: {fileID: 6666408425385348999}
-  m_Layer: 9
+  m_Layer: 2
   m_Name: land
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -23,10 +23,11 @@ public class textTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Palyer 1" || other.tag == "Player 2")
+        if (other.tag == "Player 1" || other.tag == "Player 2")
         {
             TextAnimator.enabled = true;
             AreaText.enabled = true;
+            Debug.Log("areaaaa");
         }
     }
 }

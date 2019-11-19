@@ -39,7 +39,7 @@ public class dialogueManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(3);
         }
         string sentence = sentences.Dequeue();
         StopAllCoroutines();

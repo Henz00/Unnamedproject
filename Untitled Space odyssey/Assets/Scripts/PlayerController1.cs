@@ -94,6 +94,15 @@ public class PlayerController1 : MonoBehaviour
             rb.AddForce(Vector2.up * damagejumpforce, ForceMode2D.Impulse);
             Debug.Log("touchinghurts");
         }
+        if (collision.gameObject.CompareTag("water"))
+        {
+            Health = Health - 1;
+            AS.PlayOneShot(Damagetakensound, pitchRange);
+            rb.AddForce(Vector2.up * damagejumpforce, ForceMode2D.Impulse);
+            Debug.Log("touchinghurts");
+            water.Play();
+            Debug.Log("water");
+        }
 
         if (collision.gameObject.CompareTag("Damage2"))
         {
@@ -148,12 +157,6 @@ public class PlayerController1 : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    private void OnCollisionEnter2D(Collision other)
-    {
-        if (other.gameObject.layer == 4)
-        {
-            water.Play();
-        }
-    }
+   
 }
    

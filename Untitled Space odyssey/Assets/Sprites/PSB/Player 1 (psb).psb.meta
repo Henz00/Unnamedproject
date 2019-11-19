@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c5de93d5be262004daca134247b46f96
+guid: 7cca96f40db17ac499e5fdad259dfbad
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -2186,17 +2186,17 @@ ScriptedImporter:
     dimension: {x: 0, y: 0}
     characterGroups: []
   boneGOs:
-  - go: {fileID: 3780187786734313696, guid: c5de93d5be262004daca134247b46f96, type: 3}
+  - go: {fileID: 3780187786734313696, guid: 7cca96f40db17ac499e5fdad259dfbad, type: 3}
     index: 0
-  - go: {fileID: -8192422597167702868, guid: c5de93d5be262004daca134247b46f96, type: 3}
+  - go: {fileID: -8192422597167702868, guid: 7cca96f40db17ac499e5fdad259dfbad, type: 3}
     index: 1
-  - go: {fileID: 6717245424998572336, guid: c5de93d5be262004daca134247b46f96, type: 3}
+  - go: {fileID: 6717245424998572336, guid: 7cca96f40db17ac499e5fdad259dfbad, type: 3}
     index: 2
-  - go: {fileID: -6280449697658718349, guid: c5de93d5be262004daca134247b46f96, type: 3}
+  - go: {fileID: -6280449697658718349, guid: 7cca96f40db17ac499e5fdad259dfbad, type: 3}
     index: 3
-  - go: {fileID: 1709633394445942196, guid: c5de93d5be262004daca134247b46f96, type: 3}
+  - go: {fileID: 1709633394445942196, guid: 7cca96f40db17ac499e5fdad259dfbad, type: 3}
     index: 4
-  - go: {fileID: -3742288154315040349, guid: c5de93d5be262004daca134247b46f96, type: 3}
+  - go: {fileID: -3742288154315040349, guid: 7cca96f40db17ac499e5fdad259dfbad, type: 3}
     index: 5
   generateGOHierarchy: 0
   textureAssetName: Player 1 Texture
