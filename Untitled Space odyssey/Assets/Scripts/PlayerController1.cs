@@ -15,11 +15,14 @@ public class PlayerController1 : MonoBehaviour
     public float damagejumpforce = 10;
     public float pitchRange = 0.2f;
     public float slowmo = 0.8f;
-    public float restarttime = 1f;
+    public float RestartTime = 1f;
     public int Health = 3;
     public LayerMask playerMask;
     public LayerMask dustMask;
     public Text Gameover;
+    public GameObject EyeCrack;
+    public GameObject Orange;
+    public GameObject Red;
 
     private AudioSource AS;
     public AudioClip Jumpsound;
@@ -28,6 +31,7 @@ public class PlayerController1 : MonoBehaviour
     public Animator animator;
     public ParticleSystem dust;
     public ParticleSystem water;
+    public ParticleSystem explosion;
 
 
     private float originalPitch;
@@ -40,6 +44,10 @@ public class PlayerController1 : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         AS = GetComponent<AudioSource>();
+
+        EyeCrack.SetActive(false);
+        Orange.SetActive(false);
+        Red.SetActive(false);
 
         facingRight = true;
         //originalPitch = jumpSound.pitch;
@@ -70,9 +78,29 @@ public class PlayerController1 : MonoBehaviour
         else
             animator.SetBool("jumpcheck", true);*/
 
+
+        if (Health == 2)
+        {
+            Orange.SetActive(true);
+            EyeCrack.SetActive(false);
+            Red.SetActive(false);
+
+        }
+
+        if (Health <= 1)
+        {
+            Orange.SetActive(false);
+            EyeCrack.SetActive(true);
+            Red.SetActive(true);            
+        }
+
         if (Health <= 0)
-        {        
-            StartCoroutine("Death");
+        {            
+            Time.timeScale = slowmo;
+            explosion.Play();
+            animator.SetBool("Death", true);
+            Gameover.text = "YOU DIED!";
+            Invoke("Restartlevel", RestartTime);
         }
     }
 
@@ -92,26 +120,19 @@ public class PlayerController1 : MonoBehaviour
             Health = Health - 1;
             AS.PlayOneShot(Damagetakensound, pitchRange);
             rb.AddForce(Vector2.up * damagejumpforce, ForceMode2D.Impulse);
-            Debug.Log("touchinghurts");
+
+            animator.SetTrigger("DamageTaken");
+            Debug.Log("RedWhiteStuff");
         }
         if (collision.gameObject.CompareTag("water"))
         {
             Health = Health - 1;
             AS.PlayOneShot(Damagetakensound, pitchRange);
             rb.AddForce(Vector2.up * damagejumpforce, ForceMode2D.Impulse);
+            animator.SetTrigger("DamageTaken");
             Debug.Log("touchinghurts");
             water.Play();
             Debug.Log("water");
-        }
-
-        if (collision.gameObject.CompareTag("Damage2"))
-        {
-            Health = Health - 2;
-        }
-
-        if (collision.gameObject.CompareTag("Damage3"))
-        {
-            Health = Health - 2;
         }
     }
 
@@ -149,14 +170,10 @@ public class PlayerController1 : MonoBehaviour
         }
     }
 
-    public IEnumerator Death()
-    {
-        Time.timeScale = slowmo;
-        Gameover.text = "YOU DIED!";
-        yield return new WaitForSeconds(restarttime);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    void Restartlevel()
+    {        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);                 
     }
-
-   
 }
+ 
    
