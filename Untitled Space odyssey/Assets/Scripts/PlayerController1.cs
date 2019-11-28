@@ -27,6 +27,7 @@ public class PlayerController1 : MonoBehaviour
     private AudioSource AS;
     public AudioClip Jumpsound;
     public AudioClip Damagetakensound;
+    public AudioClip deathSound;
 
     public Animator animator;
     public ParticleSystem dust;
@@ -38,6 +39,7 @@ public class PlayerController1 : MonoBehaviour
     private float movement;
     private float movementSpeed;
     private bool facingRight;
+    public bool dead;
 
     // Start is called before the first frame update
     void Start()
@@ -56,51 +58,55 @@ public class PlayerController1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (boxCheck(playerMask))
+        if (!dead)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (boxCheck(playerMask))
             {
-                jumping();
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    jumping();
+                }
+                animator.SetBool("jumpcheck", false);
+                movementSpeed = speed;
             }
-            animator.SetBool("jumpcheck", false);
-            movementSpeed = speed;
-        }
-        else
-        {
-            animator.SetBool("jumpcheck", true);
-            movementSpeed = speed / speedDivider;
-        }
+            else
+            {
+                animator.SetBool("jumpcheck", true);
+                movementSpeed = speed / speedDivider;
+            }
 
-        /*if (boxCheck(playerMask))
-        {
-            animator.SetBool("jumpcheck", false);
-        }
-        else
-            animator.SetBool("jumpcheck", true);*/
+            /*if (boxCheck(playerMask))
+            {
+                animator.SetBool("jumpcheck", false);
+            }
+            else
+                animator.SetBool("jumpcheck", true);*/
 
 
-        if (Health == 2)
-        {
-            Orange.SetActive(true);
-            EyeCrack.SetActive(false);
-            Red.SetActive(false);
+            if (Health == 2)
+            {
+                Orange.SetActive(true);
+                EyeCrack.SetActive(false);
+                Red.SetActive(false);
 
-        }
+            }
 
-        if (Health <= 1)
-        {
-            Orange.SetActive(false);
-            EyeCrack.SetActive(true);
-            Red.SetActive(true);            
-        }
+            if (Health <= 1)
+            {
+                Orange.SetActive(false);
+                EyeCrack.SetActive(true);
+                Red.SetActive(true);
+            }
 
-        if (Health <= 0)
-        {            
-            Time.timeScale = slowmo;
-            explosion.Play();
-            animator.SetBool("Death", true);
-            Gameover.text = "YOU DIED!";
-            Invoke("Restartlevel", RestartTime);
+            if (Health <= 0)
+            {
+                Time.timeScale = slowmo;
+                explosion.Play();
+                //AS.PlayOneShot(deathSound, pitchRange);
+                animator.SetBool("Death", true);
+                Gameover.text = "YOU DIED!";
+                Invoke("Restartlevel", RestartTime);
+            }
         }
     }
 

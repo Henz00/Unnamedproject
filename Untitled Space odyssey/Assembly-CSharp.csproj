@@ -68,6 +68,7 @@
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
     <Compile Include="Assets\Scripts\background.cs" />
     <Compile Include="Assets\Scripts\backgroundMainMenu.cs" />
+    <Compile Include="Assets\Scripts\ButtonFx.cs" />
     <Compile Include="Assets\Scripts\cameraControls.cs" />
     <Compile Include="Assets\Scripts\dataPickup.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />

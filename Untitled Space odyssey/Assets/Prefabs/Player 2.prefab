@@ -273,12 +273,14 @@ MonoBehaviour:
   EyeCrack: {fileID: 5748864983780606497}
   Orange: {fileID: 1057695305}
   Red: {fileID: 807336690}
-  Jumpsound: {fileID: 8300000, guid: 5a3c33e5b81d17444bc3d4b5ed13b06e, type: 3}
-  Damagetakensound: {fileID: 8300000, guid: d5c53d0c66c277f4caafe22b1eb1f23b, type: 3}
+  Jumpsound: {fileID: 8300000, guid: 6d75cf6ee8ca3874eb0b480b514f925f, type: 3}
+  Damagetakensound: {fileID: 8300000, guid: ec83471a745e7f541a8ca1d257b479ce, type: 3}
+  deathSound: {fileID: 8300000, guid: edffd7f0eae12b749b626828b8a5372d, type: 3}
   animator: {fileID: 5748864983466441185}
   dust: {fileID: 6253843024012886326}
   water: {fileID: 4840586945544635154}
   explosion: {fileID: 0}
+  dead: 0
 --- !u!50 &2151710129886225661
 Rigidbody2D:
   serializedVersion: 4
