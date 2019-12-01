@@ -123,7 +123,7 @@ public class PlayerController1 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Damage1"))
         {
-            Health = Health - 1;
+            Health--;
             AS.PlayOneShot(Damagetakensound, pitchRange);
             rb.AddForce(Vector2.up * damagejumpforce, ForceMode2D.Impulse);
 
@@ -132,7 +132,7 @@ public class PlayerController1 : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("water"))
         {
-            Health = Health - 1;
+            Health--;
             AS.PlayOneShot(Damagetakensound, pitchRange);
             rb.AddForce(Vector2.up * damagejumpforce, ForceMode2D.Impulse);
             animator.SetTrigger("DamageTaken");
