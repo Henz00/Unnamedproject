@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
     public GameObject attack1;
     public GameObject attack2;
     public AudioSource squisher;
+    public ParticleSystem squishes;
+    public bool dead = false;
 
     private Collider2D col;
     private Rigidbody2D rb;
@@ -34,7 +36,7 @@ public class Enemy : MonoBehaviour
         if (col.IsTouchingLayers(Player1Mask) && col.IsTouchingLayers(Player2Mask))
         {
             Debug.Log("squish");
-            Invoke("death", 1f);
+            death();
         }
         else if (raycastHit2D.collider != null)
         {
@@ -73,23 +75,29 @@ public class Enemy : MonoBehaviour
 
     private void death()
     {
-        squisher.Play();
-        col.enabled = false;
-        gameObject.GetComponent<MeshRenderer>().enabled = false;
-        attack1.SetActive(false);
-        attack2.SetActive(false);
-        //gameObject.SetActive(false);
+        if (dead == false)
+        {
+
+            squishes.Play();
+            squisher.Play();
+            col.enabled = false;
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            attack1.SetActive(false);
+            attack2.SetActive(false);
+            //gameObject.SetActive(false);
+            dead = true;
+        }
     }
 
     private bool boxCheckRight(LayerMask layerMask)
     {
-        RaycastHit2D raycastHit2D = Physics2D.BoxCast(transform.position, new Vector2(1.1f, 1f), 0f, new Vector2(1, 0), distance: 1F, layerMask);
+        RaycastHit2D raycastHit2D = Physics2D.BoxCast(transform.position, new Vector2(1.9f, .1f), 0f, new Vector2(1, 0), distance: 1F, layerMask);
         //Debug.Log(raycastHit2D.collider);
         return raycastHit2D.collider != null;
     }
     private bool boxCheckLeft(LayerMask layerMask)
     {
-        RaycastHit2D raycastHit2D = Physics2D.BoxCast(transform.position, new Vector2(1.1f, 1f), 0f, new Vector2(-1, 0), distance: 1F, layerMask);
+        RaycastHit2D raycastHit2D = Physics2D.BoxCast(transform.position, new Vector2(1.9f, .1f), 0f, new Vector2(-1, 0), distance: 1F, layerMask);
         //Debug.Log(raycastHit2D.collider);
         return raycastHit2D.collider != null;
     }
