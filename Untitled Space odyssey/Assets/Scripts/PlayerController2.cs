@@ -136,6 +136,13 @@ public class PlayerController2 : MonoBehaviour
             water.Play();
             Debug.Log("water");
         }
+        if (collision.gameObject.CompareTag("Boulder"))
+        {
+            Health = 0;
+            AS.PlayOneShot(Damagetakensound, pitchRange);
+            animator.SetTrigger("DamageTaken");
+            Debug.Log("RedWhiteStuff");
+        }
 
         if (collision.gameObject.CompareTag("Damage2"))
         {

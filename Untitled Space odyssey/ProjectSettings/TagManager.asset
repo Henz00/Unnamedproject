@@ -12,6 +12,7 @@ TagManager:
   - Damage3
   - Ground
   - water
+  - Boulder
   layers:
   - Default
   - TransparentFX

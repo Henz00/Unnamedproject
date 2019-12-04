@@ -10097,7 +10097,7 @@ MonoBehaviour:
   Health: 3
   playerMask:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 1281
   dustMask:
     serializedVersion: 2
     m_Bits: 1

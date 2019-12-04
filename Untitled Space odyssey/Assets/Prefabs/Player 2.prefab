@@ -265,7 +265,7 @@ MonoBehaviour:
   Health: 3
   playerMask:
     serializedVersion: 2
-    m_Bits: 513
+    m_Bits: 1537
   dustMask:
     serializedVersion: 2
     m_Bits: 1
@@ -279,7 +279,7 @@ MonoBehaviour:
   animator: {fileID: 5748864983466441185}
   dust: {fileID: 6253843024012886326}
   water: {fileID: 4840586945544635154}
-  explosion: {fileID: 0}
+  explosion: {fileID: 3996558526300927417}
   dead: 0
 --- !u!50 &2151710129886225661
 Rigidbody2D:

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7610120224199300563}
   - component: {fileID: 7610120224199300560}
   - component: {fileID: 7610120224199300561}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Area Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Area Name
+  m_Text: 'Plains
 
 '
 --- !u!95 &7610120224199300561
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 7610120224928809648}
   - component: {fileID: 7610120224928809649}
   - component: {fileID: 7610120224928809646}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 7610120225390659982}
   - component: {fileID: 7610120225390659983}
   - component: {fileID: 7610120225390659980}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 7610120225496376118}
   - component: {fileID: 7610120225496376119}
   - component: {fileID: 7610120225496376116}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Text fade trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
