@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\landing.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Movingplatform.cs" />
+    <Compile Include="Assets\Scripts\musicManager.cs" />
     <Compile Include="Assets\Scripts\OutOfBounds.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\PickupHUD.cs" />
