@@ -9,14 +9,18 @@ public class dialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
     public Dialogue dialogue;
+    public AudioSource source;
+
     
 
     private Queue<string> sentences;
+    private Queue<AudioClip> voiceLines;
 
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
+        voiceLines = new Queue<AudioClip>();
         StartDialogue(dialogue);
     }
 
@@ -26,10 +30,15 @@ public class dialogueManager : MonoBehaviour
 
         nameText.text = dialogue.name;
         sentences.Clear();
+        voiceLines.Clear();
 
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
+        }
+        foreach(AudioClip voiceLine in dialogue.voiceLines)
+        {
+            voiceLines.Enqueue(voiceLine);
         }
 
         DisplayNextSentence();
@@ -42,6 +51,8 @@ public class dialogueManager : MonoBehaviour
             SceneManager.LoadScene(3);
         }
         string sentence = sentences.Dequeue();
+        source.clip = voiceLines.Dequeue();
+        source.Play();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
