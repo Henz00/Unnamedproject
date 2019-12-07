@@ -34,7 +34,7 @@ public class PlayerController1 : MonoBehaviour
     public ParticleSystem water;
     public ParticleSystem explosion;
 
-
+    private GameObject ECHO;
     private float originalPitch;
     private float movement;
     private float movementSpeed;
@@ -46,6 +46,10 @@ public class PlayerController1 : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         AS = GetComponent<AudioSource>();
+        ECHO = GameObject.Find("ECHO");
+
+        ECHO.GetComponent<ECHO>().changeClip();
+        ECHO.GetComponent<AudioSource>().Play();
 
         EyeCrack.SetActive(false);
         Orange.SetActive(false);
@@ -100,12 +104,17 @@ public class PlayerController1 : MonoBehaviour
 
             if (Health <= 0)
             {
-                Time.timeScale = slowmo;
-                explosion.Play();
-                //AS.PlayOneShot(deathSound, pitchRange);
-                animator.SetBool("Death", true);
-                Gameover.text = "YOU DIED!";
-                Invoke("Restartlevel", RestartTime);
+                if (!dead)
+                {
+                    dead = true;
+                    Time.timeScale = slowmo;
+                    explosion.Play();
+                    //AS.PlayOneShot(deathSound, pitchRange);
+                    ECHO.GetComponent<ECHO>().playerDeaths++;
+                    animator.SetBool("Death", true);
+                    Gameover.text = "YOU DIED!";
+                    Invoke("Restartlevel", RestartTime);
+                }
             }
         }
     }

@@ -24,7 +24,7 @@ public class CheckPoint : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(nextSpawn);
+        //Debug.Log(nextSpawn);
     }
 
 }
