@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class dataPickup : MonoBehaviour
 {
-    AudioSource pickup;
+    public AudioSource pickup;
+    public AudioSource ECHO;
     public ParticleSystem burst;
     public ParticleSystem sparks;
     public float SleepTime;
+    public AudioClip[] lines;
 
     private PickupHUD datacounter;
     // Start is called before the first frame update
     void Start()
     {
         datacounter = GetComponentInParent<PickupHUD>();
-        pickup = GetComponent<AudioSource>();
+        
     }
 
   
@@ -24,6 +26,11 @@ public class dataPickup : MonoBehaviour
         {
             pickup.Play();
             datacounter.datascore++;
+            if ( datacounter.datascore > 1)
+            {
+                ECHO.clip = lines[Random.Range(0, lines.Length)];
+            }
+            ECHO.Play();
             gameObject.GetComponent<Collider2D>().enabled = false;
             gameObject.GetComponent<MeshRenderer>().enabled = false;
             sparks.Stop();
