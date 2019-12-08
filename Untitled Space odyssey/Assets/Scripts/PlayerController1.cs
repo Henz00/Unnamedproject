@@ -49,6 +49,8 @@ public class PlayerController1 : MonoBehaviour
         ECHO = GameObject.Find("ECHO");
 
         ECHO.GetComponent<ECHO>().changeClip();
+        if (ECHO.GetComponent<ECHO>().playerDeaths>0)
+            ECHO.GetComponent<ECHO>().changeSprite("sad");
         ECHO.GetComponent<AudioSource>().Play();
 
         EyeCrack.SetActive(false);

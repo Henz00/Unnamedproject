@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ECHO : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class ECHO : MonoBehaviour
     public AudioClip deathClip = null;
     public AudioSource EchoSource;
     public AudioClip[] deathClips;
+    public GameObject ECHOBox;
+    public Sprite ECHO_happy;
+    public Sprite ECHO_sad;
+    public Sprite ECHO_neutral;
 
     private static ECHO instance = null;
 
@@ -38,5 +43,23 @@ public class ECHO : MonoBehaviour
             deathClip = deathClips[Random.Range(0, deathClips.Length)];
             EchoSource.clip = deathClip;
         }
+    }
+    
+    void Update()
+    {
+        if (EchoSource.isPlaying)
+            ECHOBox.SetActive(true);
+        else
+            ECHOBox.SetActive(false);
+    }
+
+    public void changeSprite(string emotion)
+    {
+        if (emotion == "happy")
+            ECHOBox.GetComponent<Image>().sprite = ECHO_happy;
+        else if(emotion == "sad")
+            ECHOBox.GetComponent<Image>().sprite = ECHO_sad;
+        else if (emotion == "neutral")
+            ECHOBox.GetComponent<Image>().sprite = ECHO_neutral;
     }
 }

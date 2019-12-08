@@ -73,6 +73,7 @@
      <Compile Include="Assets\Scripts\dialogueManager.cs" />
      <Compile Include="Assets\Scripts\DialogueTrigger.cs" />
      <Compile Include="Assets\Scripts\ECHO.cs" />
+     <Compile Include="Assets\Scripts\ECHO_area.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\FallingRocks.cs" />
      <Compile Include="Assets\Scripts\Interactable.cs" />

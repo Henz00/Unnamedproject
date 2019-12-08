@@ -31,6 +31,8 @@ public class dataPickup : MonoBehaviour
                 ECHO.clip = lines[Random.Range(0, lines.Length)];
             }
             ECHO.Play();
+            GameObject.Find("ECHO").GetComponent<ECHO>().changeSprite("happy");
+            GameObject.Find("ECHO").GetComponent<ECHO>().ECHOBox.SetActive(true);
             gameObject.GetComponent<Collider2D>().enabled = false;
             gameObject.GetComponent<MeshRenderer>().enabled = false;
             sparks.Stop();
