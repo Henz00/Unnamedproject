@@ -22,7 +22,9 @@ public class PickupHUD : MonoBehaviour
 
     void Update()
     {
-        m_PickUpSlider.value = datascore;
-        
+        if (datascore > m_PickUpSlider.value)
+        {
+            m_PickUpSlider.value = m_PickUpSlider.value + 0.02f;
+        }
     }
 }
