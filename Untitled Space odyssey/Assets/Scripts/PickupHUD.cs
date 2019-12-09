@@ -5,18 +5,28 @@ using UnityEngine.UI;
 
 public class PickupHUD : MonoBehaviour
 {
-    public Slider m_PickUpSlider;
-    public float datascore = 0;
+    public float datascore;
 
+    public Slider m_PickUpSlider;
+    private static PickupHUD instance = null;
     private GameObject[] dataObjects;
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Start()
     {
-        m_PickUpSlider.value= 0F;
+        FindSlider();
 
         dataObjects = GameObject.FindGameObjectsWithTag("data");
         m_PickUpSlider.maxValue = dataObjects.Length;
-      
     }
 
 
@@ -26,5 +36,11 @@ public class PickupHUD : MonoBehaviour
         {
             m_PickUpSlider.value = m_PickUpSlider.value + 0.02f;
         }
+    }
+
+    Slider FindSlider()
+    {
+        m_PickUpSlider = FindObjectOfType<Slider>();
+        return m_PickUpSlider;
     }
 }
