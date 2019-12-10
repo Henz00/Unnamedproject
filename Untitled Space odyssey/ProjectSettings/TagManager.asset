@@ -13,6 +13,8 @@ TagManager:
   - Ground
   - water
   - Boulder
+  - checkPointManager
+  - PlayerHolder
   layers:
   - Default
   - TransparentFX

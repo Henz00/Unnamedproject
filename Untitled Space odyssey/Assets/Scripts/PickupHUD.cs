@@ -13,6 +13,8 @@ public class PickupHUD : MonoBehaviour
 
     void Awake()
     {
+        FindSlider();
+
         if (instance == null)
             instance = this;
         else
@@ -23,8 +25,6 @@ public class PickupHUD : MonoBehaviour
 
     void Start()
     {
-        FindSlider();
-
         dataObjects = GameObject.FindGameObjectsWithTag("data");
         m_PickUpSlider.maxValue = dataObjects.Length;
     }
