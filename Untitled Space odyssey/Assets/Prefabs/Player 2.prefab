@@ -5070,7 +5070,7 @@ MonoBehaviour:
   maxspeed: 10
   jumpspeed: 7
   speedDivider: 2
-  damagejumpforce: 10
+  damagejumpforce: 5
   pitchRange: 0.2
   slowmo: 0.8
   RestartTime: 1
@@ -5127,7 +5127,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05, y: -0.1}
+  m_Offset: {x: 0.061952353, y: -0.072128534}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5138,8 +5138,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 1.4}
-  m_EdgeRadius: 0
+  m_Size: {x: 2.3167305, y: 1.2009182}
+  m_EdgeRadius: 0.1
 --- !u!82 &5748864982321273547
 AudioSource:
   m_ObjectHideFlags: 0

@@ -10,13 +10,16 @@ public class dataPickup : MonoBehaviour
     public ParticleSystem sparks;
     public float SleepTime;
     public AudioClip[] lines;
+    public AudioClip firstData;
 
     private PickupHUD datacounter;
     // Start is called before the first frame update
     void Start()
     {
         datacounter = GetComponentInParent<PickupHUD>();
-        
+        ECHO = GameObject.Find("ECHO").GetComponent<AudioSource>();
+
+
     }
 
   
@@ -26,13 +29,17 @@ public class dataPickup : MonoBehaviour
         {
             pickup.Play();
             datacounter.datascore++;
-            if ( datacounter.datascore > 1)
+            if ( datacounter.datascore == 1)
+            {
+                ECHO.clip = firstData;
+            }
+            else
             {
                 ECHO.clip = lines[Random.Range(0, lines.Length)];
             }
             ECHO.Play();
             GameObject.Find("ECHO").GetComponent<ECHO>().changeSprite("happy");
-            GameObject.Find("ECHO").GetComponent<ECHO>().ECHOBox.SetActive(true);
+            //GameObject.Find("ECHO").GetComponent<ECHO>().ECHOBox.SetActive(true);
             gameObject.GetComponent<Collider2D>().enabled = false;
             gameObject.GetComponent<MeshRenderer>().enabled = false;
             sparks.Stop();
