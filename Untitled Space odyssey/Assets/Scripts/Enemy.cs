@@ -41,13 +41,22 @@ public class Enemy : MonoBehaviour
         else if (raycastHit2D.collider != null)
         {
             if (raycastHit2D.collider.CompareTag("Player 1"))
-                SquishChecker = Player2Mask;
-            else if (raycastHit2D.collider.CompareTag("Player 2"))
-                SquishChecker = Player1Mask;
-            if (PlayerCheck(SquishChecker, raycastHit2D.transform))
             {
-                Debug.Log("squish");
-                death();
+                SquishChecker = Player2Mask;
+                if (PlayerOneCheck(SquishChecker, raycastHit2D.transform))
+                {
+                    Debug.Log("squish");
+                    death();
+                }
+            }
+            else if (raycastHit2D.collider.CompareTag("Player 2"))
+            {
+                SquishChecker = Player1Mask;
+                if (PlayerCheck(SquishChecker, raycastHit2D.transform))
+                {
+                    Debug.Log("squish");
+                    death();
+                }
             }
         }
 
@@ -105,6 +114,11 @@ public class Enemy : MonoBehaviour
     {
         RaycastHit2D raycastHit2D = Physics2D.BoxCast(checkTransform.position, new Vector2(1.9f, 1f), 0f, new Vector2(0, 1), distance: 1F, layerMask);
         //Debug.Log(raycastHit2D.collider);
+        return raycastHit2D.collider != null;
+    }
+    bool PlayerOneCheck(LayerMask layerMask, Transform checkTransform)
+    {
+        RaycastHit2D raycastHit2D = Physics2D.BoxCast(checkTransform.position, new Vector2(1.1f, 1f), 0f, new Vector2(0, 1), distance: 1F, layerMask);
         return raycastHit2D.collider != null;
     }
 }
