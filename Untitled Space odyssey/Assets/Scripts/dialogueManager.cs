@@ -46,10 +46,10 @@ public class dialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        if (sentences.Count == 0)
-        {
+        if (sentences.Count == 0 && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Intro"))
             SceneManager.LoadScene(3);
-        }
+        else if (sentences.Count == 0 && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("End"))
+            SceneManager.LoadScene(5);
         string sentence = sentences.Dequeue();
         source.clip = voiceLines.Dequeue();
         source.Play();

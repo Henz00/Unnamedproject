@@ -1810,7 +1810,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.4
-  m_Text: "Untitled \nSpace \nOdessey"
+  m_Text: 'Waning
+
+    Echoes'
 --- !u!222 &1128723155
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2342,6 +2344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelClip: {fileID: 8300000, guid: 8b5dc91ab5b0dd8449e0453b1bd7eafc, type: 3}
+  music: {fileID: 8300000, guid: cd13e319e51c94d4eb2bce1ec6473cba, type: 3}
 --- !u!1 &1551867934
 GameObject:
   m_ObjectHideFlags: 0

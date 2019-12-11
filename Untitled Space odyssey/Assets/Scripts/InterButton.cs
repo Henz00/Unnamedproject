@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class InterButton : MonoBehaviour
 {
-    private static bool interactable = false;
-    private bool activate = false;
+    private bool interactable = false;
+    public bool active = false;
 
 
     void Update()
@@ -14,16 +14,16 @@ public class InterButton : MonoBehaviour
         {
             if (Input.GetKeyDown("e"))
             {
-                if (!activate)
+                if (!active)
                 {
                     Debug.Log("Activated button!");
-                    activate = true;
+                    active = true;
 
                 }
                 else
                 {
                     Debug.Log("Deactivated button!");
-                    activate = false;
+                    active = false;
                 }
             }
         }
