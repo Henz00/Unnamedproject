@@ -5,12 +5,12 @@ using UnityEngine;
 public class puzzleManager : MonoBehaviour
 {
 
-    public InterButton interbuttonRight;
-    public InterButton interbuttonLeft;
-    public InterButton interbuttonCenter;
-    public GameObject DoorRight;
-    public GameObject DoorLeft;
-    public GameObject DoorFacility;
+    private InterButton interbuttonRight;
+    private InterButton interbuttonLeft;
+    private InterButton interbuttonCenter;
+    private GameObject DoorRight;
+    private GameObject DoorLeft;
+    private GameObject DoorFacility;
 
 
     void Start()
