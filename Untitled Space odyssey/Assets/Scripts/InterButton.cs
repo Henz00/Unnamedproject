@@ -6,6 +6,7 @@ public class InterButton : MonoBehaviour
 {
     private bool interactable = false;
     public bool active = false;
+    public AudioSource buttonSound;
 
 
     void Update()
@@ -18,12 +19,14 @@ public class InterButton : MonoBehaviour
                 {
                     Debug.Log("Activated button!");
                     active = true;
+                    buttonSound.Play();
 
                 }
                 else
                 {
                     Debug.Log("Deactivated button!");
                     active = false;
+                    buttonSound.Play();
                 }
             }
         }
