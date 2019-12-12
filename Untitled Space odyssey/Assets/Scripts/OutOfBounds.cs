@@ -13,6 +13,7 @@ public class OutOfBounds : MonoBehaviour
         if (other.gameObject.name == "Player 1" || other.gameObject.name == "Player 2")
         {
             Debug.Log("true");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
