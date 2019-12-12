@@ -19,7 +19,7 @@ public class PlayerController1 : MonoBehaviour
     public int Health = 3;
     public LayerMask playerMask;
     public LayerMask dustMask;
-    public Text Gameover;
+    //public Text Gameover;
     public GameObject EyeCrack;
     public GameObject Orange;
     public GameObject Red;
@@ -114,7 +114,7 @@ public class PlayerController1 : MonoBehaviour
                     //AS.PlayOneShot(deathSound, pitchRange);
                     ECHO.GetComponent<ECHO>().playerDeaths++;
                     animator.SetBool("Death", true);
-                    Gameover.text = "YOU DIED!";
+                    //Gameover.text = "YOU DIED!";
                     Invoke("Restartlevel", RestartTime);
                 }
             }
