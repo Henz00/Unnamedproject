@@ -35,6 +35,7 @@ public class PlayerController1 : MonoBehaviour
     public ParticleSystem explosion;
 
     private GameObject ECHO;
+    private Shaker shake;
     private float originalPitch;
     private float movement;
     private float movementSpeed;
@@ -47,6 +48,7 @@ public class PlayerController1 : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         AS = GetComponent<AudioSource>();
         ECHO = GameObject.Find("ECHO");
+        shake = GameObject.Find("CameraShaker").GetComponent<Shaker>();
 
         ECHO.GetComponent<ECHO>().changeClip();
         if (ECHO.GetComponent<ECHO>().playerDeaths>0)
@@ -137,7 +139,7 @@ public class PlayerController1 : MonoBehaviour
             Health--;
             AS.PlayOneShot(Damagetakensound, pitchRange);
             rb.AddForce(Vector2.up * damagejumpforce, ForceMode2D.Impulse);
-
+            shake.camerashake();
             animator.SetTrigger("DamageTaken");
             Debug.Log("RedWhiteStuff");
         }
@@ -148,12 +150,14 @@ public class PlayerController1 : MonoBehaviour
             rb.AddForce(Vector2.up * damagejumpforce, ForceMode2D.Impulse);
             animator.SetTrigger("DamageTaken");
             Debug.Log("touchinghurts");
+            shake.camerashake();
             water.Play();
             Debug.Log("water");
         }
         if (collision.gameObject.CompareTag("Boulder"))
         {
             Health = 0;
+            shake.camerashake();
             AS.PlayOneShot(Damagetakensound, pitchRange);
             animator.SetTrigger("DamageTaken");
             Debug.Log("RedWhiteStuff");

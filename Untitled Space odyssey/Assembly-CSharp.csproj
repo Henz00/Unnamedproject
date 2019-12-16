@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\EndLevelFade.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\CameraSwitch.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\LevelReset.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Assets\Scripts\loreDump.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Movingplatform.cs" />
+    <Compile Include="Assets\Scripts\MovingPlatformBT.cs" />
     <Compile Include="Assets\Scripts\musicManager.cs" />
     <Compile Include="Assets\Scripts\OutOfBounds.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
@@ -104,6 +106,7 @@
     <Compile Include="Assets\Scripts\puzzleDoor.cs" />
     <Compile Include="Assets\Scripts\puzzleManager.cs" />
     <Compile Include="Assets\Scripts\Rock.cs" />
+    <Compile Include="Assets\Scripts\Shaker.cs" />
     <Compile Include="Assets\Scripts\Sleep.cs" />
     <Compile Include="Assets\Scripts\SlowMotion.cs" />
     <Compile Include="Assets\Scripts\textTrigger.cs" />

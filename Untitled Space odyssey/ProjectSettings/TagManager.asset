@@ -15,6 +15,7 @@ TagManager:
   - Boulder
   - checkPointManager
   - PlayerHolder
+  - secondButton
   layers:
   - Default
   - TransparentFX

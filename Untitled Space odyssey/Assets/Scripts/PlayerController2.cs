@@ -34,6 +34,7 @@ public class PlayerController2 : MonoBehaviour
     public ParticleSystem water;
     public ParticleSystem explosion;
 
+    private Shaker shake;
     private float originalPitch;    
     private float movement;
     private float movementSpeed;
@@ -45,9 +46,10 @@ public class PlayerController2 : MonoBehaviour
     {        
         rb = GetComponent<Rigidbody2D>();
         AS = GetComponent<AudioSource>();
+        shake = GameObject.Find("CameraShaker").GetComponent<Shaker>();
 
         EyeCrack.SetActive(false);
-        Orange.SetActive(false);
+        Orange.SetActive(false);    
         Red.SetActive(false);
 
         facingRight = true;
@@ -124,6 +126,7 @@ public class PlayerController2 : MonoBehaviour
             AS.PlayOneShot(Damagetakensound, pitchRange);
             rb.AddForce(Vector2.up * damagejumpforce, ForceMode2D.Impulse);
             Debug.Log("touchinghurts");
+            shake.camerashake();
             animator.SetTrigger("DamageTaken");
         }
         if (collision.gameObject.CompareTag("water"))
@@ -133,6 +136,7 @@ public class PlayerController2 : MonoBehaviour
             rb.AddForce(Vector2.up * damagejumpforce, ForceMode2D.Impulse);
             animator.SetTrigger("DamageTaken");
             Debug.Log("touchinghurts");
+            shake.camerashake();
             water.Play();
             Debug.Log("water");
         }
@@ -141,6 +145,7 @@ public class PlayerController2 : MonoBehaviour
             Health = 0;
             AS.PlayOneShot(Damagetakensound, pitchRange);
             animator.SetTrigger("DamageTaken");
+            shake.camerashake();
             Debug.Log("RedWhiteStuff");
         }
 
