@@ -7,8 +7,6 @@ public class MovingPlatformBT : MonoBehaviour
     public float speed;
     public Transform PointA;
     public Transform PointB;
-    public GameObject Player1;
-    public GameObject Player2;
 
     private InterButton Button;
 
@@ -30,32 +28,6 @@ public class MovingPlatformBT : MonoBehaviour
         if (Button.active == false)
         {
             transform.position = Vector3.MoveTowards(transform.position, PointB.position, step);            
-        }
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject == Player1)
-        {
-            Player1.transform.parent = transform;
-        }
-
-        if (collision.gameObject == Player2)
-        {
-            Player2.transform.parent = transform;
-        }
-    }
-
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject == Player1)
-        {
-            Player1.transform.parent = null;
-        }
-
-        if (collision.gameObject == Player2)
-        {
-            Player2.transform.parent = null;
         }
     }
 }

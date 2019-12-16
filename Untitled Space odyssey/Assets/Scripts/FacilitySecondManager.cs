@@ -11,7 +11,6 @@ public class FacilitySecondManager : MonoBehaviour
     void Start()
     {
         SecondPuzzleButton = GetComponentInChildren<InterButton>();
-        SecondPuzzlePlatform = GameObject.Find("SecondPuzzlePlatform");
         SecondPuzzleDoor = GameObject.Find("SecondPuzzleDoor");
     }
 
@@ -20,12 +19,10 @@ public class FacilitySecondManager : MonoBehaviour
     {
         if (SecondPuzzleButton.active)
         {
-            SecondPuzzlePlatform.SetActive(true);
             SecondPuzzleDoor.SetActive(false);
         }
         else
         {
-            SecondPuzzlePlatform.SetActive(false);
             SecondPuzzleDoor.SetActive(true);
         }
     }
