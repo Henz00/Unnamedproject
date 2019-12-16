@@ -27,4 +27,14 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void Controls()
+    {
+        Invoke("controls", 4f);
+    }
+
+    public void controls()
+    {
+        SceneManager.LoadScene(6);
+    }
+
 }

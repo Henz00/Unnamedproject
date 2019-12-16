@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 469388516}
   - component: {fileID: 469388515}
   m_Layer: 5
-  m_Name: LoadText
+  m_Name: ControlsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -572,7 +572,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Load Game
+  m_Text: Controls
 --- !u!222 &469388516
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1712,6 +1712,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 719694523}
+          m_MethodName: StartGame
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 2
     callback:
       m_PersistentCalls:
@@ -1837,7 +1848,7 @@ GameObject:
   - component: {fileID: 1244816829}
   - component: {fileID: 1244816828}
   m_Layer: 5
-  m_Name: LoadGameBT
+  m_Name: ControlsBT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2057,6 +2068,17 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1244816829}
           m_MethodName: HoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 719694523}
+          m_MethodName: Controls
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2687,6 +2709,17 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1555456738}
           m_MethodName: HoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 719694523}
+          m_MethodName: ExitGame
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
