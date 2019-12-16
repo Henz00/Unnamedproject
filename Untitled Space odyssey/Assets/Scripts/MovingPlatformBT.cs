@@ -19,7 +19,6 @@ public class MovingPlatformBT : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-
         float step = speed * Time.deltaTime;
         if (Button.active == true)
         {

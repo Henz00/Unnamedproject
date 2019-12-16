@@ -75,6 +75,7 @@
      <Compile Include="Assets\Scripts\DialogueTrigger.cs" />
      <Compile Include="Assets\Scripts\ECHO.cs" />
      <Compile Include="Assets\Scripts\ECHO_area.cs" />
+     <Compile Include="Assets\Scripts\EndGame.cs" />
      <Compile Include="Assets\Scripts\EndLevelFade.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\FacilityFirstManager.cs" />
